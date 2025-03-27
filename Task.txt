@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // MongoDB connection URI (from Kubernetes Service DNS)
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://xx:<db_password>@cluster0.o8emf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://xx:xx@cluster0.o8emf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
@@ -87,7 +87,7 @@ spec:
             - containerPort: 3000
           env:
             - name: MONGO_URI
-              value: "mongodb+srv://xx:<db_password>@cluster0.o8emf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+              value: "mongodb+srv://xx:xx@cluster0.o8emf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 ---------------------------------------------------------------------------------------------------
 apiVersion: v1
 kind: Service
@@ -103,8 +103,8 @@ spec:
   type: LoadBalancer
 
 
-docker build -t your-dockerhub-username/node-mongo-app:latest .
-docker push your-dockerhub-username/node-mongo-app:latest
+docker build -t deepanik/node-mongo-app:latest .
+docker push deepanik/node-mongo-app:latest
 
 kubectl apply -f mongo-deployment.yaml
 kubectl apply -f node-deployment.yaml

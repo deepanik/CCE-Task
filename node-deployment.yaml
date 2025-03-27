@@ -19,7 +19,7 @@ spec:
             - containerPort: 3000
           env:
             - name: MONGO_URI
-              value: "mongodb+srv://xx:<db_password>@cluster0.o8emf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+              value: "mongodb+srv://xx:xx@cluster0.o8emf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 ---
 apiVersion: v1
 kind: Service
