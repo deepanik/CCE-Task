@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // MongoDB connection URI (from Kubernetes Service DNS)
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://xx:<db_password>@cluster0.o8emf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://xx:xx@cluster0.o8emf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
